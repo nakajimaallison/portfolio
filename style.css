@@ -24,22 +24,22 @@
     --accent-color: #FF9B7A;
 }
 
-/* Daytime Theme - Clear sky gradient */
+/* Daytime Theme - Natural clear sky */
 [data-theme="daytime"] {
-    --gradient-top: #4A90E2;
-    --gradient-upper: #6BA8E8;
-    --gradient-mid-1: #8BC4EA;
-    --gradient-mid-2: #A5D8F0;
-    --gradient-mid-3: #C0E7F5;
-    --gradient-lower: #D4F1FA;
-    --gradient-bottom: #E8F8FF;
+    --gradient-top: #5B8FB9;
+    --gradient-upper: #7AA5C8;
+    --gradient-mid-1: #95BAD6;
+    --gradient-mid-2: #AED0E6;
+    --gradient-mid-3: #C5E1F0;
+    --gradient-lower: #D8EDF7;
+    --gradient-bottom: #E8F4FA;
     --text-primary: #1d1d1f;
     --text-secondary: #6e6e73;
     --glass-bg: rgba(255, 255, 255, 0.18);
     --glass-border: rgba(255, 255, 255, 0.25);
     --glass-shadow: rgba(0, 0, 0, 0.1);
     --glass-highlight: rgba(255, 255, 255, 0.4);
-    --accent-color: #4A90E2;
+    --accent-color: #5B8FB9;
 }
 
 /* Sunset Theme - Twilight magic hour */
