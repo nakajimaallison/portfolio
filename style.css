@@ -111,26 +111,13 @@ main {
 }
 
 section {
-    display: grid;
-    grid-template-columns: 40px 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
 }
 
 .section-marker {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--text-tertiary);
-    padding-top: 2px;
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0;
-}
-
-:root {
-    --text-tertiary: #AFAFAF;
-}
-
-[data-theme="dark"] {
-    --text-tertiary: #6C6C6C;
+    display: none;
 }
 
 .section-content {
@@ -374,15 +361,6 @@ footer {
     
     main {
         gap: 60px;
-    }
-    
-    section {
-        grid-template-columns: 32px 1fr;
-        gap: 16px;
-    }
-    
-    .section-marker {
-        font-size: 13px;
     }
     
     .team-item,
