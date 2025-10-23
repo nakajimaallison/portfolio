@@ -12,6 +12,7 @@
     --green-light: #00E806;
     --text-primary: #000000;
     --text-secondary: #6C6C6C;
+    --text-tertiary: #AFAFAF;
     --bg-primary: #FFFFFF;
     --bg-secondary: #F7F7F7;
     --border: #E6E6E6;
@@ -23,6 +24,7 @@
     --green-light: #1AFF1A;
     --text-primary: #FFFFFF;
     --text-secondary: #AFAFAF;
+    --text-tertiary: #6C6C6C;
     --bg-primary: #000000;
     --bg-secondary: #0A0A0A;
     --border: #262626;
@@ -115,10 +117,20 @@ section {
 }
 
 .section-marker {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-tertiary);
     padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+}
+
+:root {
+    --text-tertiary: #AFAFAF;
+}
+
+[data-theme="dark"] {
+    --text-tertiary: #6C6C6C;
 }
 
 .section-content {
