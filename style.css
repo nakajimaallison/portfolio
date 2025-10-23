@@ -60,22 +60,22 @@
     --accent-color: #FF8C5A;
 }
 
-/* Nighttime Theme - Twilight sky */
+/* Nighttime Theme - Cosmic starry night */
 [data-theme="nighttime"] {
-    --gradient-top: #1A1A2E;
-    --gradient-upper: #2D2A4A;
-    --gradient-mid-1: #3D3558;
-    --gradient-mid-2: #4A4266;
-    --gradient-mid-3: #5A5078;
-    --gradient-lower: #6B5E8C;
-    --gradient-bottom: #7D6EA0;
+    --gradient-top: #000814;
+    --gradient-upper: #0D1B2A;
+    --gradient-mid-1: #1B3A52;
+    --gradient-mid-2: #2C5F8D;
+    --gradient-mid-3: #3A6EA5;
+    --gradient-lower: #4A7FB8;
+    --gradient-bottom: #5B8FC4;
     --text-primary: #F5F5F7;
-    --text-secondary: #A1A1A6;
-    --glass-bg: rgba(30, 30, 46, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-shadow: rgba(0, 0, 0, 0.3);
-    --glass-highlight: rgba(255, 255, 255, 0.1);
-    --accent-color: #9B7EC8;
+    --text-secondary: #B8C5D6;
+    --glass-bg: rgba(13, 27, 42, 0.5);
+    --glass-border: rgba(74, 127, 184, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.4);
+    --glass-highlight: rgba(91, 143, 196, 0.15);
+    --accent-color: #4A7FB8;
 }
 
 body {
@@ -116,6 +116,42 @@ body::before {
     z-index: 9999;
     opacity: 0.015;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Starfield for nighttime theme */
+[data-theme="nighttime"] body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 85%, white, transparent),
+        radial-gradient(2px 2px at 15% 65%, white, transparent),
+        radial-gradient(1px 1px at 70% 40%, white, transparent),
+        radial-gradient(1px 1px at 40% 20%, white, transparent),
+        radial-gradient(2px 2px at 85% 80%, white, transparent);
+    background-size: 
+        200% 200%, 200% 200%, 300% 300%, 400% 400%, 250% 250%,
+        350% 350%, 280% 280%, 320% 320%, 380% 380%, 260% 260%;
+    background-position: 
+        0% 0%, 40% 60%, 70% 30%, 20% 80%, 90% 40%,
+        30% 50%, 60% 90%, 80% 20%, 10% 70%, 50% 10%;
+    opacity: 0.6;
+    animation: twinkle 8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
 }
 
 /* Dynamic gradient animation */
