@@ -105,7 +105,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 300px;
+    height: 400px;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -125,23 +125,23 @@ body {
 /* Wave 1 - Deepest layer */
 .wave-1 {
     background: linear-gradient(180deg, transparent 0%, var(--wave-color-1) 100%);
-    opacity: 0.3;
+    opacity: 0.7;
     animation: wave-motion-1 15s infinite;
     animation-delay: 0s;
 }
 
 /* Wave 2 - Middle layer */
 .wave-2 {
-    background: linear-gradient(180deg, transparent 20%, var(--wave-color-2) 100%);
-    opacity: 0.25;
+    background: linear-gradient(180deg, transparent 30%, var(--wave-color-2) 100%);
+    opacity: 0.6;
     animation: wave-motion-2 12s infinite;
     animation-delay: -2s;
 }
 
 /* Wave 3 - Surface layer with shimmer */
 .wave-3 {
-    background: linear-gradient(180deg, transparent 40%, var(--wave-color-3) 100%);
-    opacity: 0.2;
+    background: linear-gradient(180deg, transparent 50%, var(--wave-color-3) 100%);
+    opacity: 0.5;
     animation: wave-motion-3 18s infinite;
     animation-delay: -4s;
 }
@@ -159,7 +159,7 @@ body {
         transparent 50%, 
         var(--reflection-color) 75%, 
         transparent 100%);
-    opacity: 0.15;
+    opacity: 0.35;
     animation: wave-shimmer 20s ease-in-out infinite;
 }
 
@@ -655,6 +655,7 @@ section h2::after {
 /* Footer */
 footer {
     margin-top: 80px;
+    margin-bottom: 120px;
     padding: 24px 0;
     position: relative;
 }
