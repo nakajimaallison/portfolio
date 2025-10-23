@@ -20,6 +20,20 @@
     --border-light: #F3F4F6;
 }
 
+[data-theme="dark"] {
+    --purple: #8B95EC;
+    --purple-light: #A5AEEF;
+    --purple-dark: #6B75D8;
+    --text-primary: #E5E7EB;
+    --text-secondary: #9CA3AF;
+    --text-tertiary: #6B7280;
+    --bg-primary: #111827;
+    --bg-secondary: #1F2937;
+    --bg-tertiary: #374151;
+    --border: #374151;
+    --border-light: #1F2937;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
     background: var(--bg-primary);
@@ -27,6 +41,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .container {
@@ -40,6 +55,13 @@ header {
     padding: 48px 0 32px;
     margin-bottom: 64px;
     border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-left {
+    flex: 1;
 }
 
 .name {
@@ -303,9 +325,53 @@ footer {
     color: var(--text-tertiary);
 }
 
-/* Hide unused elements */
-.ocean-waves,
+/* Theme Toggle */
 .theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0;
+}
+
+.theme-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.theme-btn.active {
+    background: var(--bg-primary);
+    color: var(--purple);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.theme-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Hide sunrise, sunset, and ocean waves */
+.theme-btn[data-theme="sunrise"],
+.theme-btn[data-theme="sunset"],
+.ocean-waves {
     display: none;
 }
 
@@ -318,6 +384,12 @@ footer {
     header {
         padding: 32px 0 24px;
         margin-bottom: 48px;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .theme-switcher {
+        align-self: flex-start;
     }
     
     .name {

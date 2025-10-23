@@ -1,10 +1,10 @@
-// Time-of-day theme functionality
+// Light/Dark theme toggle
 const html = document.documentElement;
 const themeButtons = document.querySelectorAll('.theme-btn');
 
-// Check for saved theme preference or default to sunrise
-const currentTheme = localStorage.getItem('theme') || 'sunrise';
-html.setAttribute('data-theme', currentTheme);
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'daytime';
+html.setAttribute('data-theme', currentTheme === 'nighttime' ? 'dark' : 'light');
 
 // Set active button on load
 themeButtons.forEach(button => {
@@ -21,7 +21,7 @@ themeButtons.forEach(button => {
         const selectedTheme = button.getAttribute('data-theme');
         
         // Update HTML attribute
-        html.setAttribute('data-theme', selectedTheme);
+        html.setAttribute('data-theme', selectedTheme === 'nighttime' ? 'dark' : 'light');
         
         // Save preference
         localStorage.setItem('theme', selectedTheme);
@@ -32,36 +32,38 @@ themeButtons.forEach(button => {
     });
 });
 
-// Optional: Add fade-in animation on load
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s';
-        document.body.style.opacity = '1';
-    }, 100);
-});
+// Optional: Detect system theme preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Optional: Auto-update theme based on actual time of day
-function getTimeOfDayTheme() {
-    const hour = new Date().getHours();
+// If no saved preference, use system preference
+if (!localStorage.getItem('theme')) {
+    const systemTheme = prefersDark.matches ? 'nighttime' : 'daytime';
+    html.setAttribute('data-theme', prefersDark.matches ? 'dark' : 'light');
+    localStorage.setItem('theme', systemTheme);
     
-    if (hour >= 5 && hour < 8) return 'sunrise';      // 5am-8am
-    else if (hour >= 8 && hour < 17) return 'daytime'; // 8am-5pm
-    else if (hour >= 17 && hour < 20) return 'sunset'; // 5pm-8pm
-    else return 'nighttime';                           // 8pm-5am
+    themeButtons.forEach(btn => {
+        if (btn.getAttribute('data-theme') === systemTheme) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
 }
 
-// Uncomment the lines below to enable auto theme based on time of day
-// (Will override manual selection every time page loads)
-/*
-const autoTheme = getTimeOfDayTheme();
-html.setAttribute('data-theme', autoTheme);
-localStorage.setItem('theme', autoTheme);
-themeButtons.forEach(btn => {
-    if (btn.getAttribute('data-theme') === autoTheme) {
-        btn.classList.add('active');
-    } else {
-        btn.classList.remove('active');
+// Listen for system theme changes
+prefersDark.addEventListener('change', (e) => {
+    // Only auto-update if user hasn't manually set a preference
+    if (!localStorage.getItem('theme-manual')) {
+        const systemTheme = e.matches ? 'nighttime' : 'daytime';
+        html.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        localStorage.setItem('theme', systemTheme);
+        
+        themeButtons.forEach(btn => {
+            if (btn.getAttribute('data-theme') === systemTheme) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
     }
 });
-*/
