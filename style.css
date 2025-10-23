@@ -1,110 +1,117 @@
-/* Monument Valley Inspired Design - Pastel geometry and serene architecture */
+/* Studio Ghibli Inspired Design - Painterly nature and serene landscapes */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Sunrise Theme - Dreamy sunset clouds */
+/* Sunrise Theme - Misty Morning Forest */
 :root,
 [data-theme="sunrise"] {
-    --gradient-top: #5B9DB5;
-    --gradient-upper: #8BADC4;
-    --gradient-mid-1: #C5A3B5;
-    --gradient-mid-2: #E4B5A8;
-    --gradient-mid-3: #F5C0A3;
-    --gradient-lower: #FFB89A;
-    --gradient-bottom: #FF9B7A;
-    --text-primary: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --glass-bg: rgba(255, 255, 255, 0.18);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
-    --glass-highlight: rgba(255, 255, 255, 0.4);
-    --accent-color: #FF9B7A;
+    --forest-deep: #3a4a3e;
+    --forest-mid: #5a6a5e;
+    --forest-light: #7a8a7e;
+    --meadow-dark: #9aa67a;
+    --meadow-bright: #b8c49a;
+    --meadow-light: #d4e0ba;
+    --sky-mist: #f0f4e8;
+    --cream: #f8faf5;
+    
+    --text-primary: #2d3e2e;
+    --text-secondary: #6a7a6a;
+    --glass-bg: rgba(248, 250, 245, 0.75);
+    --glass-border: rgba(154, 166, 122, 0.3);
+    --glass-shadow: rgba(58, 74, 62, 0.15);
+    --glass-highlight: rgba(255, 255, 255, 0.6);
+    --accent-color: #9aa67a;
 }
 
-/* Daytime Theme - Natural clear sky */
+/* Daytime Theme - Sunny Meadow */
 [data-theme="daytime"] {
-    --gradient-top: #5B8FB9;
-    --gradient-upper: #7AA5C8;
-    --gradient-mid-1: #95BAD6;
-    --gradient-mid-2: #AED0E6;
-    --gradient-mid-3: #C5E1F0;
-    --gradient-lower: #D8EDF7;
-    --gradient-bottom: #E8F4FA;
-    --text-primary: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --glass-bg: rgba(255, 255, 255, 0.18);
-    --glass-border: rgba(255, 255, 255, 0.25);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
-    --glass-highlight: rgba(255, 255, 255, 0.4);
-    --accent-color: #5B8FB9;
+    --forest-deep: #2d5a4a;
+    --forest-mid: #3d7a5a;
+    --forest-light: #5a9b70;
+    --meadow-dark: #8bc34a;
+    --meadow-bright: #9ccc65;
+    --meadow-light: #c5e1a5;
+    --sky-mist: #e1f5dc;
+    --cream: #fdfdf8;
+    
+    --text-primary: #2d3e2e;
+    --text-secondary: #5a6b5a;
+    --glass-bg: rgba(253, 253, 248, 0.8);
+    --glass-border: rgba(156, 204, 101, 0.35);
+    --glass-shadow: rgba(45, 90, 74, 0.12);
+    --glass-highlight: rgba(255, 255, 255, 0.7);
+    --accent-color: #9ccc65;
 }
 
-/* Sunset Theme - Twilight magic hour */
+/* Sunset Theme - Golden Hour */
 [data-theme="sunset"] {
-    --gradient-top: #1A2847;
-    --gradient-upper: #3D4E7A;
-    --gradient-mid-1: #6B5B95;
-    --gradient-mid-2: #9B6BA8;
-    --gradient-mid-3: #D97FB5;
-    --gradient-lower: #FF9B7A;
-    --gradient-bottom: #FFB85F;
-    --text-primary: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --glass-bg: rgba(255, 255, 255, 0.18);
-    --glass-border: rgba(217, 127, 181, 0.25);
-    --glass-shadow: rgba(0, 0, 0, 0.1);
-    --glass-highlight: rgba(255, 184, 95, 0.3);
-    --accent-color: #D97FB5;
+    --forest-deep: #3a4a2e;
+    --forest-mid: #5a6a4a;
+    --forest-light: #7a8a6a;
+    --meadow-dark: #c9a65a;
+    --meadow-bright: #e8b96e;
+    --meadow-light: #f4d19b;
+    --sky-mist: #fde7c8;
+    --cream: #fff9ed;
+    
+    --text-primary: #3a3a2e;
+    --text-secondary: #6a6a5a;
+    --glass-bg: rgba(255, 249, 237, 0.75);
+    --glass-border: rgba(232, 185, 110, 0.35);
+    --glass-shadow: rgba(58, 74, 46, 0.15);
+    --glass-highlight: rgba(255, 255, 255, 0.65);
+    --accent-color: #e8b96e;
 }
 
-/* Nighttime Theme - Cosmic starry night */
+/* Nighttime Theme - Moonlit Forest */
 [data-theme="nighttime"] {
-    --gradient-top: #000814;
-    --gradient-upper: #0D1B2A;
-    --gradient-mid-1: #1B3A52;
-    --gradient-mid-2: #2C5F8D;
-    --gradient-mid-3: #3A6EA5;
-    --gradient-lower: #4A7FB8;
-    --gradient-bottom: #5B8FC4;
-    --text-primary: #F5F5F7;
-    --text-secondary: #B8C5D6;
-    --glass-bg: rgba(13, 27, 42, 0.5);
-    --glass-border: rgba(74, 127, 184, 0.2);
-    --glass-shadow: rgba(0, 0, 0, 0.4);
-    --glass-highlight: rgba(91, 143, 196, 0.15);
-    --accent-color: #4A7FB8;
+    --forest-deep: #0d1f1a;
+    --forest-mid: #1a2f2a;
+    --forest-light: #2a4a3a;
+    --meadow-dark: #3a5a4a;
+    --meadow-bright: #4a6a5a;
+    --meadow-light: #5a7a6a;
+    --sky-mist: #6a8a7a;
+    --cream: #d8e4df;
+    
+    --text-primary: #d8e4df;
+    --text-secondary: #a8b4af;
+    --glass-bg: rgba(216, 228, 223, 0.15);
+    --glass-border: rgba(106, 138, 122, 0.25);
+    --glass-shadow: rgba(13, 31, 26, 0.4);
+    --glass-highlight: rgba(216, 228, 223, 0.2);
+    --accent-color: #6a8a7a;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Neue Haas Grotesk", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
     background: 
-        radial-gradient(ellipse at 20% 30%, var(--gradient-mid-1) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 60%, var(--gradient-mid-3) 0%, transparent 50%),
-        radial-gradient(ellipse at 40% 80%, var(--gradient-lower) 0%, transparent 40%),
-        linear-gradient(
-            135deg,
-            var(--gradient-top) 0%,
-            var(--gradient-upper) 20%,
-            var(--gradient-mid-1) 35%,
-            var(--gradient-mid-2) 50%,
-            var(--gradient-mid-3) 65%,
-            var(--gradient-lower) 85%,
-            var(--gradient-bottom) 100%
-        );
+        radial-gradient(ellipse 100% 40% at 50% 0%, var(--sky-mist), transparent 70%),
+        radial-gradient(ellipse 120% 60% at 30% 80%, var(--meadow-bright) 0%, transparent 50%),
+        radial-gradient(ellipse 120% 60% at 70% 90%, var(--meadow-dark) 0%, transparent 50%),
+        linear-gradient(to bottom, 
+            var(--forest-light) 0%,
+            var(--forest-mid) 15%,
+            var(--meadow-dark) 40%,
+            var(--meadow-bright) 70%,
+            var(--meadow-light) 100%);
     background-attachment: fixed;
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    transition: background 1.5s ease;
 }
 
-/* Film grain texture overlay for depth */
+/* Painterly texture overlay - gouache effect */
 body::before {
     content: '';
     position: fixed;
@@ -114,12 +121,12 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='5' seed='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
 }
 
-/* Starfield for nighttime theme */
+/* Fireflies for nighttime theme */
 [data-theme="nighttime"] body::after {
     content: '';
     position: fixed;
@@ -128,80 +135,71 @@ body::before {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
-    background-image: 
-        radial-gradient(2px 2px at 20% 30%, white, transparent),
-        radial-gradient(2px 2px at 60% 70%, white, transparent),
-        radial-gradient(1px 1px at 50% 50%, white, transparent),
-        radial-gradient(1px 1px at 80% 10%, white, transparent),
-        radial-gradient(2px 2px at 90% 60%, white, transparent),
-        radial-gradient(1px 1px at 33% 85%, white, transparent),
-        radial-gradient(2px 2px at 15% 65%, white, transparent),
-        radial-gradient(1px 1px at 70% 40%, white, transparent),
-        radial-gradient(1px 1px at 40% 20%, white, transparent),
-        radial-gradient(2px 2px at 85% 80%, white, transparent);
-    background-size: 
-        200% 200%, 200% 200%, 300% 300%, 400% 400%, 250% 250%,
-        350% 350%, 280% 280%, 320% 320%, 380% 380%, 260% 260%;
-    background-position: 
-        0% 0%, 40% 60%, 70% 30%, 20% 80%, 90% 40%,
-        30% 50%, 60% 90%, 80% 20%, 10% 70%, 50% 10%;
-    opacity: 0.6;
-    animation: twinkle 8s ease-in-out infinite;
+    z-index: 1;
+    background: 
+        radial-gradient(circle at 25% 60%, rgba(180, 220, 100, 0.4) 3px, transparent 4px),
+        radial-gradient(circle at 75% 70%, rgba(200, 230, 120, 0.3) 2px, transparent 3px),
+        radial-gradient(circle at 45% 80%, rgba(190, 225, 110, 0.5) 3px, transparent 4px),
+        radial-gradient(circle at 60% 50%, rgba(180, 220, 100, 0.3) 2px, transparent 3px),
+        radial-gradient(circle at 35% 45%, rgba(200, 230, 120, 0.4) 2.5px, transparent 3px),
+        radial-gradient(circle at 80% 55%, rgba(190, 225, 110, 0.3) 2px, transparent 3px);
+    background-size: 1000px 600px;
+    animation: fireflies 6s ease-in-out infinite;
 }
 
-/* Subtle starfield for sunset twilight */
+/* Floating dandelion seeds for sunset theme */
 [data-theme="sunset"] body::after {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 40%;
+    height: 100%;
     pointer-events: none;
-    z-index: 0;
-    background-image: 
-        radial-gradient(1px 1px at 25% 15%, rgba(255, 255, 255, 0.9), transparent),
-        radial-gradient(1px 1px at 75% 25%, rgba(255, 255, 255, 0.8), transparent),
-        radial-gradient(2px 2px at 50% 10%, rgba(255, 255, 255, 0.9), transparent),
-        radial-gradient(1px 1px at 85% 20%, rgba(255, 255, 255, 0.7), transparent),
-        radial-gradient(1px 1px at 15% 30%, rgba(255, 255, 255, 0.8), transparent),
-        radial-gradient(1px 1px at 60% 35%, rgba(255, 255, 255, 0.7), transparent);
-    background-size: 
-        300% 300%, 350% 350%, 250% 250%, 400% 400%, 320% 320%, 380% 380%;
-    background-position: 
-        20% 10%, 80% 20%, 50% 5%, 90% 15%, 10% 25%, 65% 30%;
-    opacity: 0.4;
-    animation: twinkle-soft 10s ease-in-out infinite;
+    z-index: 1;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.4) 1.5px, transparent 2px),
+        radial-gradient(circle at 65% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1.5px),
+        radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.35) 1.5px, transparent 2px),
+        radial-gradient(circle at 80% 45%, rgba(255, 255, 255, 0.3) 1px, transparent 1.5px),
+        radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.4) 1.5px, transparent 2px);
+    background-size: 900px 700px;
+    animation: dandelion-drift 12s ease-in-out infinite;
 }
 
-@keyframes twinkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.8; }
-}
-
-@keyframes twinkle-soft {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.5; }
-}
-
-/* Dynamic gradient animation */
-@keyframes gradient-drift {
-    0%, 100% {
-        background-position: 0% 50%, 100% 50%, 50% 100%, 0% 0%;
-        background-size: 120% 120%, 120% 120%, 100% 100%, 150% 150%;
+@keyframes fireflies {
+    0%, 100% { 
+        opacity: 0.8;
+        transform: translateY(0);
     }
-    25% {
-        background-position: 10% 40%, 90% 60%, 45% 95%, 5% 5%;
-        background-size: 130% 130%, 110% 110%, 110% 110%, 160% 160%;
+    50% { 
+        opacity: 0.3;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes dandelion-drift {
+    0% { 
+        opacity: 0.7;
+        transform: translate(0, 0);
+    }
+    50% { 
+        opacity: 0.4;
+        transform: translate(20px, 50px);
+    }
+    100% { 
+        opacity: 0.7;
+        transform: translate(0, 0);
+    }
+}
+
+/* Gentle wind animation for organic feel */
+@keyframes gentle-sway {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        background-position: 15% 60%, 85% 50%, 55% 90%, 10% 0%;
-        background-size: 125% 125%, 125% 125%, 105% 105%, 155% 155%;
-    }
-    75% {
-        background-position: 5% 55%, 95% 55%, 50% 100%, 0% 10%;
-        background-size: 115% 115%, 135% 135%, 100% 100%, 150% 150%;
+        transform: translateY(-5px) rotate(1deg);
     }
 }
 
@@ -250,16 +248,16 @@ header {
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Noise texture on glass */
+/* Paper texture on glass */
 header::before {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 20px;
-    opacity: 0.035;
+    border-radius: 28px;
+    opacity: 0.06;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='4' numOctaves='4' seed='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
 }
 
 header:hover {
