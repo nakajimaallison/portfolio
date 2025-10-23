@@ -105,52 +105,56 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 400px;
+    height: 250px;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
     overflow: hidden;
 }
 
 .wave {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -50%;
     width: 200%;
     height: 100%;
-    background-repeat: repeat-x;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
 
-/* Wave 1 - Deepest layer */
+/* Wave 1 - Back layer with wavy shape */
 .wave-1 {
-    background: linear-gradient(180deg, transparent 0%, var(--wave-color-1) 100%);
-    opacity: 0.7;
+    background: var(--wave-color-1);
+    opacity: 0.8;
+    border-radius: 50% 50% 0 0 / 80px 80px 0 0;
     animation: wave-motion-1 15s infinite;
-    animation-delay: 0s;
+    bottom: -20px;
 }
 
 /* Wave 2 - Middle layer */
 .wave-2 {
-    background: linear-gradient(180deg, transparent 30%, var(--wave-color-2) 100%);
-    opacity: 0.6;
+    background: var(--wave-color-2);
+    opacity: 0.7;
+    border-radius: 45% 55% 0 0 / 60px 60px 0 0;
     animation: wave-motion-2 12s infinite;
     animation-delay: -2s;
+    bottom: -10px;
 }
 
-/* Wave 3 - Surface layer with shimmer */
+/* Wave 3 - Front layer */
 .wave-3 {
-    background: linear-gradient(180deg, transparent 50%, var(--wave-color-3) 100%);
-    opacity: 0.5;
+    background: var(--wave-color-3);
+    opacity: 0.6;
+    border-radius: 55% 45% 0 0 / 40px 40px 0 0;
     animation: wave-motion-3 18s infinite;
     animation-delay: -4s;
+    bottom: 0;
 }
 
-/* Light reflections on water */
+/* Light reflections on water - subtle shimmer */
 .wave-reflection {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -50%;
     width: 200%;
     height: 100%;
     background: linear-gradient(90deg, 
@@ -159,45 +163,59 @@ body {
         transparent 50%, 
         var(--reflection-color) 75%, 
         transparent 100%);
-    opacity: 0.35;
+    opacity: 0.25;
     animation: wave-shimmer 20s ease-in-out infinite;
+    mix-blend-mode: overlay;
 }
 
 @keyframes wave-motion-1 {
-    0%, 100% {
-        transform: translateX(0) translateY(0);
+    0% {
+        transform: translateX(0) translateY(0) scaleY(1);
     }
     50% {
-        transform: translateX(-25%) translateY(-10px);
+        transform: translateX(-25%) translateY(-15px) scaleY(1.1);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0) scaleY(1);
     }
 }
 
 @keyframes wave-motion-2 {
-    0%, 100% {
-        transform: translateX(0) translateY(0);
+    0% {
+        transform: translateX(0) translateY(0) scaleY(1);
     }
     50% {
-        transform: translateX(-20%) translateY(-8px);
+        transform: translateX(-20%) translateY(-10px) scaleY(1.05);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0) scaleY(1);
     }
 }
 
 @keyframes wave-motion-3 {
-    0%, 100% {
+    0% {
         transform: translateX(0) translateY(0);
     }
     50% {
         transform: translateX(-30%) translateY(-5px);
     }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 @keyframes wave-shimmer {
-    0%, 100% {
+    0% {
         transform: translateX(0);
-        opacity: 0.15;
+        opacity: 0.2;
     }
     50% {
+        transform: translateX(-25%);
+        opacity: 0.3;
+    }
+    100% {
         transform: translateX(-50%);
-        opacity: 0.25;
+        opacity: 0.2;
     }
 }
 
