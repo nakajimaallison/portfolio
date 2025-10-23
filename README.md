@@ -42,3 +42,4 @@ Edit the content directly in `index.html`:
 Adjust styling in `style.css` to match your brand colors and preferences.
 
 # portfolio
+# portfolio
