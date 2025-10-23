@@ -264,6 +264,78 @@ section {
     font-weight: 500;
 }
 
+/* Case Studies Cards */
+.case-studies-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.case-study-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.case-study-card:hover {
+    border-color: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 200, 5, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--green);
+}
+
+.card-year {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+.card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.card-arrow {
+    font-size: 20px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    align-self: flex-end;
+}
+
+.case-study-card:hover .card-arrow {
+    color: var(--green);
+    transform: translateX(4px);
+}
+
 /* Footer */
 footer {
     margin-top: 120px;
