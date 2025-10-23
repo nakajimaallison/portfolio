@@ -1,4 +1,4 @@
-/* Robinhood-inspired Portfolio Design */
+/* Robinhood Colors + Ethan's Minimal Layout */
 
 * {
     margin: 0;
@@ -32,43 +32,32 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Capsule Sans Text", "Inter", "Segoe UI", Roboto, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 16px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 60px 24px 120px;
 }
 
 /* Header */
 header {
-    padding: 24px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
 }
 
-.header-left {
-    flex: 1;
-}
-
-.name {
-    font-size: 28px;
+.site-title {
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: -0.02em;
     color: var(--text-primary);
-    margin-bottom: 4px;
-}
-
-.subtitle {
-    font-size: 16px;
-    color: var(--text-secondary);
-    font-weight: 500;
+    letter-spacing: -0.01em;
 }
 
 /* Theme Toggle */
@@ -86,8 +75,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     background: transparent;
     border: none;
     border-radius: 100px;
@@ -104,336 +93,224 @@ header {
 .theme-btn.active {
     background: var(--bg-primary);
     color: var(--green);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .theme-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
-/* Hide unused theme buttons */
-.theme-btn[data-theme="sunrise"],
-.theme-btn[data-theme="sunset"],
-.ocean-waves {
-    display: none;
-}
-
-/* Main sections */
+/* Sections */
 main {
-    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
 
 section {
-    margin-bottom: 120px;
-}
-
-h2 {
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--text-primary);
-    margin-bottom: 48px;
-    line-height: 1.1;
-}
-
-/* Intro section - Hero style */
-.intro {
-    margin-bottom: 120px;
-    text-align: center;
-    padding: 80px 0;
-}
-
-.intro p {
-    font-size: 28px;
-    line-height: 1.4;
-    color: var(--text-primary);
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-}
-
-/* Projects */
-.project-grid {
     display: grid;
-    gap: 64px;
+    grid-template-columns: 40px 1fr;
+    gap: 24px;
 }
 
-.project-card {
+.section-marker {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding-top: 2px;
+}
+
+.section-content {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-.video-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    background: var(--bg-secondary);
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-
-.video-wrapper:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 200, 5, 0.1);
-}
-
-.video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.project-title {
-    font-size: 24px;
+.section-title {
+    font-size: 14px;
     font-weight: 700;
     color: var(--text-primary);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    transition: color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
 }
 
-.project-title:hover {
-    color: var(--green);
+/* Intro Section */
+.intro-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 16px;
 }
 
-.project-desc {
-    font-size: 17px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-weight: 400;
+.current-role {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-primary);
 }
 
-/* Work Experience */
-.work-list {
-    display: grid;
+.current-role strong {
+    font-weight: 700;
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 
-.work-card {
-    background: var(--bg-secondary);
-    padding: 32px;
-    text-decoration: none;
-    display: block;
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    transition: all 0.2s ease;
-}
-
-.work-card:hover {
-    background: var(--bg-primary);
-    border-color: var(--green);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 200, 5, 0.08);
-}
-
-.work-content {
+.contact-link {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-}
-
-.work-left {
-    flex: 1;
-}
-
-.work-card h3 {
-    font-size: 20px;
-    font-weight: 700;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 16px;
     color: var(--text-primary);
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-}
-
-.company {
-    font-size: 17px;
-    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
     font-weight: 500;
 }
 
-.dates {
-    font-size: 15px;
+.contact-link:hover {
+    color: var(--green);
+}
+
+.link-number {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.arrow {
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+/* Teams Section */
+.teams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.team-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.team-item:last-child {
+    border-bottom: none;
+}
+
+.team-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.team-dates {
+    font-size: 14px;
     color: var(--text-secondary);
     white-space: nowrap;
     font-weight: 500;
 }
 
-/* Blog */
-.blog-list {
-    display: grid;
+/* Projects Section */
+.projects-list {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
 }
 
-.blog-card {
-    background: var(--bg-secondary);
-    padding: 32px;
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
     text-decoration: none;
-    display: block;
-    border-radius: 16px;
-    border: 1px solid var(--border);
     transition: all 0.2s ease;
 }
 
-.blog-card:hover {
-    background: var(--bg-primary);
-    border-color: var(--green);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 200, 5, 0.08);
+.project-item:last-child {
+    border-bottom: none;
 }
 
-.blog-card h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
+.project-item:hover {
+    padding-left: 8px;
 }
 
-.blog-card p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
-/* Connect section */
-.contact-text {
-    font-size: 20px;
-    color: var(--text-primary);
-    margin-bottom: 32px;
-    line-height: 1.6;
-    font-weight: 500;
-}
-
-.email-link {
+.project-item:hover .project-name {
     color: var(--green);
-    text-decoration: none;
-    font-weight: 700;
+}
+
+.project-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
     transition: color 0.2s ease;
 }
 
-.email-link:hover {
-    color: var(--green-dark);
-}
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 24px;
-    background: var(--green);
-    border: none;
-    border-radius: 100px;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 200, 5, 0.2);
-}
-
-.social-btn:hover {
-    background: var(--green-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 200, 5, 0.3);
-}
-
-.social-btn svg {
-    width: 18px;
-    height: 18px;
+.project-year {
+    font-size: 14px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    font-weight: 500;
 }
 
 /* Footer */
 footer {
-    padding: 60px 0;
+    margin-top: 120px;
+    padding-top: 40px;
     border-top: 1px solid var(--border);
-    margin-top: 80px;
 }
 
 .footer-text {
-    text-align: center;
     font-size: 14px;
     color: var(--text-secondary);
     font-weight: 500;
+    font-style: italic;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .container {
-        padding: 0 20px;
+        padding: 40px 20px 80px;
     }
     
     header {
-        padding: 20px 0;
         margin-bottom: 60px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
     }
     
-    .name {
-        font-size: 24px;
-    }
-    
-    .subtitle {
-        font-size: 15px;
-    }
-    
-    .intro {
-        padding: 60px 0;
-        margin-bottom: 80px;
-    }
-    
-    .intro p {
-        font-size: 22px;
-    }
-    
-    h2 {
-        font-size: 36px;
-        margin-bottom: 32px;
+    main {
+        gap: 60px;
     }
     
     section {
-        margin-bottom: 80px;
+        grid-template-columns: 32px 1fr;
+        gap: 16px;
     }
     
-    .work-content {
+    .section-marker {
+        font-size: 13px;
+    }
+    
+    .team-item,
+    .project-item {
         flex-direction: column;
-        gap: 12px;
+        align-items: flex-start;
+        gap: 4px;
     }
     
-    .dates {
+    .team-dates,
+    .project-year {
         white-space: normal;
-    }
-    
-    .work-card,
-    .blog-card {
-        padding: 24px;
-    }
-    
-    .social-btn {
-        padding: 14px 20px;
-        font-size: 15px;
     }
 }
 
@@ -450,7 +327,7 @@ a, button {
 /* Focus styles */
 a:focus-visible,
 button:focus-visible {
-    outline: 3px solid var(--green);
+    outline: 2px solid var(--green);
     outline-offset: 2px;
 }
 
@@ -466,7 +343,7 @@ html {
     transition-timing-function: ease;
 }
 
-a, button, .work-card, .blog-card, .video-wrapper, .social-btn {
+a, button, .team-item, .project-item {
     transition-property: all;
     transition-duration: 0.2s;
     transition-timing-function: ease;
