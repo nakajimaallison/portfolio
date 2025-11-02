@@ -4,152 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allison Nakajima - Product Designer</title>
-    <meta name="description" content="Product Designer specializing in design systems and user research at Paramount CBS Digital.">
+    <meta name="description" content="Product Designer specializing in design systems, user research, and interactive software. Crafting scalable solutions that solve complex problems in creative ways.">
+    
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Allison Nakajima - Product Designer">
+    <meta property="og:description" content="Product Designer specializing in design systems, user research, and interactive software. Crafting scalable solutions that solve complex problems in creative ways.">
+    <meta property="og:url" content="https://allisonnakajima.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Allison Nakajima - Product Designer">
+    <meta name="twitter:description" content="Product Designer specializing in design systems, user research, and interactive software. Crafting scalable solutions that solve complex problems in creative ways.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header>
-            <h1 class="site-title">Allison's Digital Home</h1>
-            <div class="theme-switcher">
-                <button class="theme-btn active" data-theme="daytime" aria-label="Light mode" title="Light">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-                <button class="theme-btn" data-theme="nighttime" aria-label="Dark mode" title="Dark">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-            </div>
-        </header>
-
         <!-- Main Content -->
         <main>
-            <!-- Intro Section [1] -->
-            <section class="section-intro">
-                <div class="section-marker">1</div>
+            <!-- Intro Section -->
+            <section class="section-intro" id="intro">
                 <div class="section-content">
-                    <p class="intro-text">I'm a designer curious about design systems, user research, and interactive software. I enjoy crafting scalable solutions that solve complex problems in creative ways. Previously at Carbonlink and Perpetual, but still an admirer of thoughtful product design.</p>
-                    <p class="current-role">Currently, a designer on the <strong>Paramount CBS Digital</strong> Design Team.</p>
-                </div>
-            </section>
-
-            <!-- Contact Section [2] -->
-            <section class="section-contact">
-                <div class="section-marker">2</div>
-                <div class="section-content">
-                    <h2 class="section-title">Contact</h2>
-                    <div class="contact-links">
-                        <a href="mailto:nakajima.allison@gmail.com" target="_blank" class="contact-link">
-                            <span class="link-number">¹</span> Email<span class="arrow">↗</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/allisonnakajima" target="_blank" class="contact-link">
-                            <span class="link-number">²</span> LinkedIn<span class="arrow">↗</span>
-                        </a>
+                    <div class="intro-reveal-container">
+                        <p class="intro-text intro-text-visible">I'm a designer curious about design systems, user research, and interactive software. I enjoy crafting scalable solutions that solve complex problems in creative ways.</p>
+                        <p class="intro-text intro-text-hidden" id="secret-text">Some cool hidden text here</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Teams Section [3] -->
-            <section class="section-teams">
-                <div class="section-marker">3</div>
+            <!-- Case Studies Section -->
+            <section class="section-case-studies" id="case-studies">
                 <div class="section-content">
-                    <h2 class="section-title">Teams</h2>
-                    <div class="teams-list">
-                        <div class="team-item">
-                            <div class="team-name">Paramount CBS Digital</div>
-                            <div class="team-dates">2024- </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-name">Carbonlink</div>
-                            <div class="team-dates">2023</div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-name">Perpetual</div>
-                            <div class="team-dates">2022</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section [4] -->
-            <section class="section-projects">
-                <div class="section-marker">4</div>
-                <div class="section-content">
-                    <h2 class="section-title">Selected Work</h2>
-                    <div class="projects-list">
-                        <a href="#" class="project-item">
-                            <div class="project-name">CBS Design System Overhaul</div>
-                            <div class="project-year">2024</div>
-                        </a>
-                        <a href="#" class="project-item">
-                            <div class="project-name">Figma Dev Mode Training</div>
-                            <div class="project-year">2024</div>
-                        </a>
-                        <a href="#" class="project-item">
-                            <div class="project-name">Blockchain Product Design</div>
-                            <div class="project-year">2023</div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Case Studies Section [5] -->
-            <section class="section-case-studies">
-                <div class="section-marker">5</div>
-                <div class="section-content">
-                    <h2 class="section-title">Case Studies</h2>
                     <div class="case-studies-grid">
-                        <a href="#" class="case-study-card">
-                            <div class="card-header">
-                                <span class="card-label">Design System</span>
-                                <span class="card-year">2024</span>
+                        <article class="case-study-card">
+                            <div class="card-content">
+                                <h3 class="card-title">CBS Design System Overhaul</h3>
+                                <p class="card-desc">Led the overhaul of the design system documentation at Paramount CBS Digital, creating scalable component libraries and validating changes through 2,600+ user tests across multiple product teams.</p>
                             </div>
-                            <h3 class="card-title">Evolving CBS's Digital Design Direction</h3>
-                            <p class="card-desc">Led the overhaul of the design system documentation, validating changes through 2,600+ user tests.</p>
-                            <span class="card-arrow">→</span>
-                        </a>
+                            <div class="card-thumbnail">
+                                <img src="CBScasestudythumbnail.png" alt="CBS Design System project thumbnail" loading="lazy">
+                            </div>
+                        </article>
                         
-                        <a href="#" class="case-study-card">
-                            <div class="card-header">
-                                <span class="card-label">Education</span>
-                                <span class="card-year">2024</span>
+                        <article class="case-study-card">
+                            <div class="card-content">
+                                <h3 class="card-title">Figma Dev Mode Training</h3>
+                                <p class="card-desc">Developed and presented comprehensive training sessions for 8 cross-functional teams, introducing Dev Mode workflows that reduced design specification time by 78% and improved designer-developer handoff.</p>
                             </div>
-                            <h3 class="card-title">Figma Dev Mode Training</h3>
-                            <p class="card-desc">Developed and presented training sessions for 8 cross-functional teams, reducing design spec time by 78%.</p>
-                            <span class="card-arrow">→</span>
-                        </a>
+                            <div class="card-thumbnail">
+                                <img src="https://via.placeholder.com/960x540/00C805/FFFFFF?text=Figma+Dev+Mode" alt="Figma Dev Mode Training project thumbnail" loading="lazy">
+                            </div>
+                        </article>
                         
-                        <a href="#" class="case-study-card">
-                            <div class="card-header">
-                                <span class="card-label">Blockchain</span>
-                                <span class="card-year">2023</span>
+                        <article class="case-study-card">
+                            <div class="card-content">
+                                <h3 class="card-title">Blockchain Product Design</h3>
+                                <p class="card-desc">Designed user-friendly interfaces for carbon credit trading platforms at Carbonlink, simplifying complex blockchain interactions into intuitive experiences for environmental stakeholders.</p>
                             </div>
-                            <h3 class="card-title">Carbonlink Social Media Content</h3>
-                            <p class="card-desc">Created engaging content strategy that increased user engagement by 2,104% and reach by 589%.</p>
-                            <span class="card-arrow">→</span>
-                        </a>
+                            <div class="card-thumbnail">
+                                <img src="https://via.placeholder.com/960x540/00C805/FFFFFF?text=Blockchain+UX" alt="Blockchain Product Design project thumbnail" loading="lazy">
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer>
+        <footer id="footer">
             <p class="footer-text">New portfolio coming soon.</p>
         </footer>
     </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" aria-label="Page navigation" id="side-nav">
+        <div class="site-logo">AN</div>
+        
+        <div class="side-nav-links">
+            <a href="#intro" class="side-nav-link active" data-section="intro">Intro</a>
+            <a href="#case-studies" class="side-nav-link" data-section="case-studies">Work</a>
+            <a href="#footer" class="side-nav-link" data-section="footer">Contact</a>
+        </div>
+        
+        <div class="theme-switcher">
+            <button class="theme-btn active" data-theme="daytime" aria-label="Light mode" title="Light">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+            <button class="theme-btn" data-theme="nighttime" aria-label="Dark mode" title="Dark">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
     <script src="script.js"></script>
 </body>
