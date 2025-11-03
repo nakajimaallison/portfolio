@@ -70,19 +70,19 @@
     'use strict';
     
     const container = document.querySelector('.intro-reveal-container');
+    const visibleText = document.querySelector('.intro-text-visible');
     const secretText = document.getElementById('secret-text');
     
-    if (!container || !secretText) return;
+    if (!container || !visibleText || !secretText) return;
     
     let isHovering = false;
-    const padding = 64; // var(--space-2xl) = 64px
     
     // Initialize position immediately on mouse enter
     container.addEventListener('mouseenter', function(e) {
         isHovering = true;
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left - padding;
-        const y = e.clientY - rect.top - padding;
+        const rect = visibleText.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         
         secretText.style.setProperty('--cursor-x', x + 'px');
         secretText.style.setProperty('--cursor-y', y + 'px');
@@ -92,9 +92,9 @@
     container.addEventListener('mousemove', function(e) {
         if (!isHovering) return;
         
-        const rect = container.getBoundingClientRect();
-        const x = e.clientX - rect.left - padding;
-        const y = e.clientY - rect.top - padding;
+        const rect = visibleText.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         
         // Update CSS custom properties for reveal position
         secretText.style.setProperty('--cursor-x', x + 'px');
@@ -216,3 +216,93 @@
         }
     });
 })();
+
+// Desktop Pet
+(function() {
+    'use strict';
+    
+    const pet = document.getElementById('desktop-pet');
+    if (!pet) return;
+    
+    // Pet state
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 100);
+    let velocityX = 0;
+    let velocityY = 0;
+    let isWalking = false;
+    
+    // Update pet position
+    function updatePosition() {
+        pet.style.left = x + 'px';
+        pet.style.top = y + 'px';
+        
+        // Flip direction based on movement
+        if (velocityX < 0) {
+            pet.style.transform = 'scaleX(-1)';
+        } else if (velocityX > 0) {
+            pet.style.transform = 'scaleX(1)';
+        }
+    }
+    
+    // Start walking in a random direction
+    function startWalking() {
+        isWalking = true;
+        pet.classList.add('walking');
+        
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1;
+        velocityX = Math.cos(angle) * speed;
+        velocityY = Math.sin(angle) * speed;
+    }
+    
+    // Stop walking
+    function stopWalking() {
+        isWalking = false;
+        pet.classList.remove('walking');
+        velocityX = 0;
+        velocityY = 0;
+    }
+    
+    // Random behavior
+    function randomBehavior() {
+        if (Math.random() < 0.3) {
+            startWalking();
+            // Walk for 2-5 seconds
+            setTimeout(stopWalking, 2000 + Math.random() * 3000);
+        }
+    }
+    
+    // Animation loop
+    function animate() {
+        if (isWalking) {
+            x += velocityX;
+            y += velocityY;
+            
+            // Bounce off edges
+            const padding = 50;
+            if (x <= 0 || x >= window.innerWidth - padding) {
+                velocityX *= -1;
+                x = Math.max(0, Math.min(x, window.innerWidth - padding));
+            }
+            if (y <= 0 || y >= window.innerHeight - padding) {
+                velocityY *= -1;
+                y = Math.max(0, Math.min(y, window.innerHeight - padding));
+            }
+            
+            updatePosition();
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Initialize
+    updatePosition();
+    animate();
+    
+    // Random behavior every 3-8 seconds
+    setInterval(randomBehavior, 3000 + Math.random() * 5000);
+    
+    // Start with initial walk
+    setTimeout(startWalking, 1000);
+})();
+
