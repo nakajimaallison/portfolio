@@ -56,3 +56,28 @@
     // Initialize theme
     initTheme();
 })();
+
+// Side Navigation - Active state management
+(function() {
+    'use strict';
+    
+    const navItems = document.querySelectorAll('.side-nav-item:not(.theme-toggle)');
+    
+    if (navItems.length === 0) return;
+    
+    // Handle click on nav items
+    navItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Prevent default for now since pages don't exist yet
+            e.preventDefault();
+            
+            // Remove active class from all items
+            navItems.forEach(navItem => {
+                navItem.classList.remove('active');
+            });
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+        });
+    });
+})();
