@@ -3,8 +3,10 @@
     'use strict';
     
     const html = document.documentElement;
-    const themeButtons = document.querySelectorAll('.theme-btn');
+    const themeToggle = document.querySelector('.theme-toggle');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (!themeToggle) return;
     
     // Helper: Safely get from localStorage
     function getStoredTheme() {
@@ -25,18 +27,10 @@
         }
     }
     
-    // Helper: Update theme in DOM and buttons
+    // Helper: Update theme in DOM
     function applyTheme(theme) {
         const dataTheme = theme === 'nighttime' ? 'dark' : 'light';
         html.setAttribute('data-theme', dataTheme);
-        
-        themeButtons.forEach(btn => {
-            if (btn.getAttribute('data-theme') === theme) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
     }
     
     // Initialize theme on page load
@@ -52,13 +46,12 @@
         }
     }
     
-    // Add click handlers to theme buttons
-    themeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedTheme = button.getAttribute('data-theme');
-            applyTheme(selectedTheme);
-            setStoredTheme(selectedTheme);
-        });
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'daytime' : 'nighttime';
+        applyTheme(newTheme);
+        setStoredTheme(newTheme);
     });
     
     // Initialize theme
@@ -112,11 +105,11 @@
     });
 })();
 
-// Side Navigation - Scroll Spy & Smooth Scroll
+// Navigation - Scroll Spy & Smooth Scroll
 (function() {
     'use strict';
     
-    const navLinks = document.querySelectorAll('.side-nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
     const sections = document.querySelectorAll('section[id], footer[id]');
     
     if (navLinks.length === 0 || sections.length === 0) return;
@@ -168,16 +161,16 @@
 (function() {
     'use strict';
     
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const sideNav = document.getElementById('side-nav');
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
     const overlay = document.getElementById('mobile-menu-overlay');
-    const navLinks = document.querySelectorAll('.side-nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     
-    if (!menuToggle || !sideNav || !overlay) return;
+    if (!menuToggle || !mobileMenu || !overlay) return;
     
     // Toggle menu
     function toggleMenu() {
-        const isActive = sideNav.classList.contains('active');
+        const isActive = mobileMenu.classList.contains('active');
         
         if (isActive) {
             closeMenu();
@@ -187,14 +180,14 @@
     }
     
     function openMenu() {
-        sideNav.classList.add('active');
+        mobileMenu.classList.add('active');
         overlay.classList.add('active');
         menuToggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden'; // Prevent scroll
     }
     
     function closeMenu() {
-        sideNav.classList.remove('active');
+        mobileMenu.classList.remove('active');
         overlay.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = ''; // Restore scroll
@@ -205,13 +198,13 @@
     overlay.addEventListener('click', closeMenu);
     
     // Close menu when clicking nav links
-    navLinks.forEach(link => {
+    mobileNavLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
     
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && sideNav.classList.contains('active')) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
             closeMenu();
         }
     });
