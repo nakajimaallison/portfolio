@@ -16,8 +16,7 @@
     --bg-tertiary: #FAFAFA;
     --border: #E6E6E6;
     --accent: #FF4757;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-    --nav-shadow: rgba(0, 0, 0, 0.08);
+    --nav-bg: #F5F5F5;
     --nav-item-bg: rgba(0, 0, 0, 0.04);
     --nav-item-active: #FFFFFF;
 }
@@ -32,8 +31,7 @@
     --bg-tertiary: #151515;
     --border: #2A2A2A;
     --accent: #FF6B7A;
-    --nav-bg: rgba(26, 26, 26, 0.8);
-    --nav-shadow: rgba(0, 0, 0, 0.3);
+    --nav-bg: #1A1A1A;
     --nav-item-bg: rgba(255, 255, 255, 0.05);
     --nav-item-active: rgba(255, 255, 255, 0.1);
 }
@@ -56,11 +54,8 @@ body {
     transform: translateY(-50%);
     z-index: 1000;
     background: var(--nav-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-radius: 100px;
     padding: 16px 12px;
-    box-shadow: 0 8px 32px var(--nav-shadow);
     display: flex;
     flex-direction: column;
     gap: 40px;
