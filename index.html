@@ -101,16 +101,37 @@
     </nav>
 
     <div class="container">
-        <!-- Simple Header -->
-        <header class="header">
-            <h1 class="site-name">allisonnakajima</h1>
-        </header>
-
         <!-- Hero Section -->
         <section class="hero">
-            <p class="hero-text">I'm Allison, a product designer based in the New York City. I love crafting intuitive interfaces at the intersect of design systems, art, and AI.</p>
+            <div class="hero-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="60" height="60" aria-hidden="true">
+                    <!-- hand-drawn style cat head -->
+                    <path d="M50 140 
+                             C50 95, 80 70, 120 72
+                             C160 74, 200 76, 240 72
+                             C280 68, 310 96, 310 140
+                             C310 170, 290 200, 230 210
+                             L130 218
+                             C90 212, 60 186, 50 140 Z"
+                          fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- left ear -->
+                    <path d="M100 80 L80 40 L120 60 Z" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- right ear -->
+                    <path d="M220 60 L260 40 L240 86 Z" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- eyes -->
+                    <circle cx="150" cy="150" r="8" fill="currentColor"/>
+                    <circle cx="210" cy="150" r="8" fill="currentColor"/>
+                    <!-- tiny nose / mouth -->
+                    <path d="M180 168 q6 8 12 0" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
             
-            <p class="hero-subtext">I've spent years helping companies turn vision to reality, and design to competitive advantage. Check out some selected work below, or get in touch if you'd like to read case studies.</p>
+            <div class="hero-text-container">
+                <p class="hero-text hero-text-visible">I'm Allison, a product designer based in New York City. I design intuitive interfaces shaped by design systems, art, and AI.</p>
+                <p class="hero-text hero-text-hidden" id="secret-text">I'm Ally, a young adult who technically lives in New Jersey. I craft my life through curiosity, caffeine, and a lot of Chat GPT.</p>
+            </div>
+            
+            <p class="hero-subtext">Currently, a designer on the CBS Sports Design Team.</p>
             
             <div class="hero-actions">
                 <span class="availability-badge">
@@ -121,30 +142,28 @@
             </div>
         </section>
 
-        <!-- Work Grid -->
-        <section class="work-grid">
-            <div class="work-item">
-                <div class="work-thumbnail">
-                    <img src="CBScasestudythumbnail.png" alt="CBS Design System" loading="lazy">
-                </div>
-                <p class="work-caption">CBS Design System</p>
-                <p class="work-company">Paramount CBS Digital</p>
-            </div>
+        <!-- Featured Projects -->
+        <section class="featured-projects">
+            <h2 class="section-title">Featured Projects</h2>
             
-            <div class="work-item">
-                <div class="work-thumbnail">
-                    <img src="https://via.placeholder.com/600x400/7C3AED/FFFFFF?text=Figma+Dev+Mode" alt="Figma Training" loading="lazy">
-                </div>
-                <p class="work-caption">Figma Dev Mode Training</p>
-                <p class="work-company">Paramount CBS Digital</p>
-            </div>
-            
-            <div class="work-item">
-                <div class="work-thumbnail">
-                    <img src="https://via.placeholder.com/600x400/10B981/FFFFFF?text=Blockchain+UX" alt="Carbon Trading Platform" loading="lazy">
-                </div>
-                <p class="work-caption">Carbon credit trading platform</p>
-                <p class="work-company">Carbonlink</p>
+            <div class="projects-grid">
+                <article class="project-card project-card-cbs">
+                    <div class="project-content">
+                        <img src="CBScasestudythumbnail.png" alt="CBS Design System" class="project-visual" loading="lazy">
+                    </div>
+                </article>
+                
+                <article class="project-card project-card-figma">
+                    <div class="project-content">
+                        <img src="CBScasestudythumbnail.png" alt="Figma Dev Mode Training" class="project-visual" loading="lazy">
+                    </div>
+                </article>
+                
+                <article class="project-card project-card-blockchain">
+                    <div class="project-content">
+                        <img src="CBScasestudythumbnail.png" alt="Carbon Trading Platform" class="project-visual" loading="lazy">
+                    </div>
+                </article>
             </div>
         </section>
 

@@ -81,3 +81,50 @@
         });
     });
 })();
+
+// Secret Text Reveal Effect
+(function() {
+    'use strict';
+    
+    const container = document.querySelector('.hero-text-container');
+    const visibleText = document.querySelector('.hero-text-visible');
+    const secretText = document.getElementById('secret-text');
+    
+    if (!container || !visibleText || !secretText) return;
+    
+    let isHovering = false;
+    
+    // Initialize position immediately on mouse enter
+    container.addEventListener('mouseenter', function(e) {
+        isHovering = true;
+        const rect = visibleText.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        secretText.style.setProperty('--cursor-x', x + 'px');
+        secretText.style.setProperty('--cursor-y', y + 'px');
+    });
+    
+    // Update reveal position on mouse move
+    container.addEventListener('mousemove', function(e) {
+        if (!isHovering) return;
+        
+        const rect = visibleText.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Update CSS custom properties for reveal position
+        secretText.style.setProperty('--cursor-x', x + 'px');
+        secretText.style.setProperty('--cursor-y', y + 'px');
+    });
+    
+    // Reset on mouse leave
+    container.addEventListener('mouseleave', function() {
+        isHovering = false;
+        // Delay position reset until after the fade transition completes (150ms)
+        setTimeout(function() {
+            secretText.style.setProperty('--cursor-x', '-200px');
+            secretText.style.setProperty('--cursor-y', '-200px');
+        }, 150);
+    });
+})();

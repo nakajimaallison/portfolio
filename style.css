@@ -163,43 +163,90 @@ body {
 .container {
     max-width: 700px;
     margin: 0 auto;
-    padding: 80px 32px 120px;
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 140px;
-}
-
-.site-name {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
+    padding: 0 32px 120px;
 }
 
 /* Hero Section */
 .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 100px;
+}
+
+.hero-logo {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.hero-logo svg {
+    display: block;
+}
+
+.hero-text-container {
+    position: relative;
+    cursor: none;
+    margin-bottom: 24px;
 }
 
 .hero-text {
     font-size: 32px;
     line-height: 1.4;
     font-weight: 400;
-    color: var(--text-primary);
-    margin-bottom: 32px;
     letter-spacing: -0.02em;
+}
+
+.hero-text-visible {
+    display: block;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.hero-text-hidden {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--bg-primary);
+    margin: 0;
+    clip-path: circle(70px at var(--cursor-x, -200px) var(--cursor-y, -200px));
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+    pointer-events: none;
+}
+
+.hero-text-container:hover .hero-text-hidden {
+    opacity: 1;
+}
+
+.hero-text-hidden::before {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(calc(var(--cursor-x, -200px) - 70px), calc(var(--cursor-y, -200px) - 70px));
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+}
+
+.hero-text-container:hover .hero-text-hidden::before {
+    opacity: 1;
 }
 
 .hero-subtext {
     font-size: 18px;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .hero-actions {
@@ -255,50 +302,86 @@ body {
     opacity: 0.9;
 }
 
-/* Work Grid */
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+/* Featured Projects */
+.featured-projects {
     margin-bottom: 100px;
 }
 
-.work-item {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
 }
 
-.work-thumbnail {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 24px;
     overflow: hidden;
-    background: var(--bg-secondary);
+    min-height: 400px;
+    transition: transform 0.3s ease;
 }
 
-.work-thumbnail img {
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-content {
+    padding: 0;
+}
+
+.project-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.3s ease;
 }
 
-.work-item:hover .work-thumbnail img {
-    transform: scale(1.05);
+/* Individual project card styles */
+.project-card-cbs {
+    background: #1A1A1A;
 }
 
-.work-caption {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-primary);
-    line-height: 1.4;
+.project-card-figma {
+    background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
 }
 
-.work-company {
-    font-size: 14px;
-    color: var(--text-tertiary);
+.project-card-blockchain {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.project-placeholder {
+    text-align: center;
+    color: white;
+}
+
+.project-placeholder h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.project-placeholder p {
+    font-size: 16px;
+    opacity: 0.9;
 }
 
 /* Section Divider */
@@ -412,18 +495,11 @@ body {
     }
     
     .container {
-        padding: 60px 24px 80px;
-    }
-    
-    .header {
-        margin-bottom: 80px;
-    }
-    
-    .site-name {
-        font-size: 16px;
+        padding: 0 24px 80px;
     }
     
     .hero {
+        min-height: auto; /* Remove full height on mobile */
         margin-bottom: 60px;
     }
     
@@ -436,9 +512,37 @@ body {
         margin-bottom: 32px;
     }
     
-    .work-grid {
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+    
+    .projects-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 20px;
+    }
+    
+    .project-card {
+        min-height: 300px;
+    }
+    
+    .project-card-cbs {
+        grid-column: span 1;
+    }
+    
+    .project-content {
+        padding: 32px;
+    }
+    
+    .project-placeholder h3 {
+        font-size: 22px;
+    }
+    
+    .project-placeholder p {
+        font-size: 14px;
+    }
+    
+    .featured-projects {
         margin-bottom: 60px;
     }
     
