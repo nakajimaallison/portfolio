@@ -1,4 +1,7 @@
-// Light/Dark theme toggle with localStorage
+// ==========================================================================
+// THEME TOGGLE
+// ==========================================================================
+
 (function() {
     'use strict';
     
@@ -8,7 +11,10 @@
     
     if (!themeToggle) return;
     
-    // Helper: Safely get from localStorage
+    /**
+     * Safely get theme from localStorage
+     * @returns {string|null} Stored theme or null
+     */
     function getStoredTheme() {
         try {
             return localStorage.getItem('theme');
@@ -18,7 +24,10 @@
         }
     }
     
-    // Helper: Safely set to localStorage
+    /**
+     * Safely set theme to localStorage
+     * @param {string} theme - Theme to store
+     */
     function setStoredTheme(theme) {
         try {
             localStorage.setItem('theme', theme);
@@ -27,25 +36,29 @@
         }
     }
     
-    // Helper: Update theme in DOM
+    /**
+     * Apply theme to DOM
+     * @param {string} theme - Theme to apply ('light' or 'dark')
+     */
     function applyTheme(theme) {
         html.setAttribute('data-theme', theme);
     }
     
-    // Initialize theme on page load
+    /**
+     * Initialize theme on page load
+     */
     function initTheme() {
         const storedTheme = getStoredTheme();
         const initialTheme = storedTheme || (prefersDark.matches ? 'dark' : 'light');
         
         applyTheme(initialTheme);
         
-        // Save initial theme if none was stored
         if (!storedTheme) {
             setStoredTheme(initialTheme);
         }
     }
     
-    // Toggle theme on click
+    // Toggle theme on button click
     themeToggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -53,36 +66,41 @@
         setStoredTheme(newTheme);
     });
     
-    // Initialize theme
+    // Initialize
     initTheme();
 })();
 
-// Side Navigation - Active state management
+// ==========================================================================
+// NAVIGATION - ACTIVE STATE
+// ==========================================================================
+
 (function() {
     'use strict';
     
     const navItems = document.querySelectorAll('.side-nav-item:not(.theme-toggle)');
+    const homeLink = document.querySelector('.side-nav-item[href="#home"]');
     
     if (navItems.length === 0) return;
     
-    // Handle click on nav items
+    // Prevent default navigation for non-working links (not home)
     navItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Prevent default for now since pages don't exist yet
-            e.preventDefault();
-            
-            // Remove active class from all items
-            navItems.forEach(navItem => {
-                navItem.classList.remove('active');
+        if (item !== homeLink) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
             });
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-        });
+        }
     });
+    
+    // Keep home link active by default (it's the only working page)
+    if (homeLink) {
+        homeLink.classList.add('active');
+    }
 })();
 
-// Secret Text Reveal Effect
+// ==========================================================================
+// HERO TEXT REVEAL EFFECT
+// ==========================================================================
+
 (function() {
     'use strict';
     
@@ -94,37 +112,88 @@
     
     let isHovering = false;
     
-    // Initialize position immediately on mouse enter
+    /**
+     * Update reveal circle position
+     * @param {MouseEvent} e - Mouse event
+     */
+    function updateRevealPosition(e) {
+        const rect = visibleText.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        secretText.style.setProperty('--cursor-x', x + 'px');
+        secretText.style.setProperty('--cursor-y', y + 'px');
+    }
+    
+    // Initialize position on mouse enter
     container.addEventListener('mouseenter', function(e) {
         isHovering = true;
-        const rect = visibleText.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        secretText.style.setProperty('--cursor-x', x + 'px');
-        secretText.style.setProperty('--cursor-y', y + 'px');
+        updateRevealPosition(e);
     });
     
-    // Update reveal position on mouse move
+    // Update position on mouse move
     container.addEventListener('mousemove', function(e) {
         if (!isHovering) return;
-        
-        const rect = visibleText.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        // Update CSS custom properties for reveal position
-        secretText.style.setProperty('--cursor-x', x + 'px');
-        secretText.style.setProperty('--cursor-y', y + 'px');
+        updateRevealPosition(e);
     });
     
     // Reset on mouse leave
     container.addEventListener('mouseleave', function() {
         isHovering = false;
-        // Delay position reset until after the fade transition completes (150ms)
+        // Delay position reset until after fade transition completes
         setTimeout(function() {
             secretText.style.setProperty('--cursor-x', '-200px');
             secretText.style.setProperty('--cursor-y', '-200px');
         }, 150);
+    });
+})();
+
+// ==========================================================================
+// CUSTOM CURSOR FOR PROJECT CARDS
+// ==========================================================================
+
+(function() {
+    'use strict';
+    
+    const customCursor = document.getElementById('customCursor');
+    const cursorText = document.querySelector('.custom-cursor-text');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    if (!customCursor || !cursorText || projectCards.length === 0) return;
+    
+    let isOverCard = false;
+    
+    /**
+     * Update cursor position
+     * @param {MouseEvent} e - Mouse event
+     */
+    function updateCursorPosition(e) {
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
+    }
+    
+    // Track mouse movement over project cards
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            isOverCard = true;
+            customCursor.classList.add('active');
+            
+            // Update cursor text based on card's data-project attribute
+            const projectName = card.getAttribute('data-project') || 'View Project';
+            cursorText.textContent = projectName;
+            
+            // Update cursor background color based on card's data-cursor-color attribute
+            const cursorColor = card.getAttribute('data-cursor-color');
+            if (cursorColor) {
+                customCursor.style.backgroundColor = cursorColor;
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            isOverCard = false;
+            customCursor.classList.remove('active');
+        });
+        
+        card.addEventListener('mousemove', updateCursorPosition);
     });
 })();
