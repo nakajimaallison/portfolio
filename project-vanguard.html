@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Vanguard - CBS Design System | Allison Nakajima</title>
+    <meta name="description" content="Case study: Project Vanguard - CBS Design System redesign and documentation.">
+    
+    <!-- Theme color for browser UI -->
+    <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F0F0F" media="(prefers-color-scheme: dark)">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>✨</text></svg>">
+    
+    <!-- Material Symbols (Material 3 Icons) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Side Navigation -->
+    <nav class="side-nav" aria-label="Main navigation">
+        <div class="side-nav-links">
+            <a href="index.html#home" class="side-nav-item" aria-label="Home">
+                <span class="material-symbols-rounded" aria-hidden="true">home</span>
+                <span class="nav-label">Home</span>
+            </a>
+            
+            <a href="index.html#about" class="side-nav-item" aria-label="About">
+                <span class="material-symbols-rounded" aria-hidden="true">person</span>
+                <span class="nav-label">About</span>
+            </a>
+            
+            <a href="index.html#work" class="side-nav-item" aria-label="Work">
+                <span class="material-symbols-rounded" aria-hidden="true">work</span>
+                <span class="nav-label">Work</span>
+            </a>
+            
+            <a href="index.html#blog" class="side-nav-item" aria-label="Blog">
+                <span class="material-symbols-rounded" aria-hidden="true">article</span>
+                <span class="nav-label">Blog</span>
+            </a>
+            
+            <a href="index.html#contact" class="side-nav-item" aria-label="Contact">
+                <span class="material-symbols-rounded" aria-hidden="true">mail</span>
+                <span class="nav-label">Contact</span>
+            </a>
+        </div>
+        
+        <div class="side-nav-bottom">
+            <button class="side-nav-item theme-toggle" aria-label="Toggle theme">
+                <span class="material-symbols-rounded sun-icon" aria-hidden="true">light_mode</span>
+                <span class="material-symbols-rounded moon-icon" aria-hidden="true">dark_mode</span>
+                <span class="nav-label">Theme</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Case Study Hero -->
+        <section class="case-study-hero">
+            <a href="index.html#work" class="back-link">← Back to Work</a>
+            
+            <h1 class="case-study-title">CBS Sports: Bringing the energy of sports into the UI</h1>
+            <p class="case-study-subtitle">A systems redesign that transforms flat screens into dynamic experiences.</p>
+            
+            <span class="availability-badge badge-development" role="status">
+                <span class="status-dot" aria-hidden="true"></span>
+                In development
+            </span>
+        </section>
+
+        <!-- Hero Image Placeholder -->
+        <section class="case-study-section">
+            <div class="case-study-image-container">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #0B5EF5 0%, #0A4CC9 100%);">
+                    <span class="placeholder-text">Hero Image</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Context & Challenge</h2>
+            
+            <p class="body-text">When I joined CBS Sports in 2023, the design system was struggling to keep pace with the rapid growth of digital products. Multiple teams were creating variations of the same components, leading to inconsistent user experiences across platforms.</p>
+            
+            <p class="body-text">The core issues we identified were:</p>
+            
+            <ul class="case-study-list">
+                <li>Outdated component library with no version control</li>
+                <li>Minimal documentation for designers and developers</li>
+                <li>No standardized handoff process between teams</li>
+                <li>Significant design debt accumulated over 3+ years</li>
+                <li>Teams spending more time on component creation than product work</li>
+            </ul>
+            
+            <p class="body-text">The challenge was clear: we needed to modernize the system while maintaining backward compatibility and getting buy-in from stakeholders across the organization.</p>
+        </section>
+
+        <!-- Research Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Research & Discovery</h2>
+            
+            <p class="body-text">I started by conducting a comprehensive audit of our existing components and interviewing stakeholders across 8 product teams to understand their pain points.</p>
+            
+            <h3 class="subsection-heading">Key Findings</h3>
+            
+            <div class="callout-box">
+                <p class="callout-text">"We spend 60% of our time recreating components that should already exist in the system. It's incredibly frustrating."</p>
+                <p class="callout-attribution">— Product Designer, CBS Fantasy Sports</p>
+            </div>
+            
+            <p class="body-text">Through stakeholder interviews and analytics review, we discovered that teams were most impacted by:</p>
+            
+            <ul class="case-study-list">
+                <li><strong>Unclear component usage:</strong> 73% of designers reported not knowing when to use certain components</li>
+                <li><strong>Missing states and variants:</strong> Critical interaction states were missing from 60% of components</li>
+                <li><strong>Poor accessibility:</strong> Only 40% of components met WCAG 2.1 AA standards</li>
+                <li><strong>Handoff friction:</strong> Developers spent an average of 2 hours per component clarifying specifications</li>
+            </ul>
+        </section>
+
+        <!-- Image Section -->
+        <section class="case-study-section">
+            <div class="case-study-image-container">
+                <div class="image-placeholder" style="background: #F5F5F5;">
+                    <span class="placeholder-text">Research findings visualization</span>
+                </div>
+                <p class="image-caption">Audit findings showing component inconsistencies across 12 CBS Sports products.</p>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Design Process</h2>
+            
+            <p class="body-text">With clear problems identified, I developed a phased approach to rebuilding the design system without disrupting ongoing product work.</p>
+            
+            <h3 class="subsection-heading">Phase 1: Foundation & Architecture</h3>
+            
+            <p class="body-text">I started by establishing the foundational elements—color systems, typography scales, spacing tokens, and grid structures. These would serve as the building blocks for all components.</p>
+            
+            <p class="body-text">Working closely with our engineering team, we ensured that every design token had a corresponding code variable, creating true design-development parity.</p>
+        </section>
+
+        <!-- Two Column Image Section -->
+        <section class="case-study-section">
+            <div class="image-grid-2col">
+                <div class="image-grid-item">
+                    <div class="image-placeholder" style="background: #E8F2FF;">
+                        <span class="placeholder-text">Before</span>
+                    </div>
+                    <p class="image-caption">Legacy design system structure</p>
+                </div>
+                <div class="image-grid-item">
+                    <div class="image-placeholder" style="background: #E8F2FF;">
+                        <span class="placeholder-text">After</span>
+                    </div>
+                    <p class="image-caption">New token-based architecture</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Component Design Section -->
+        <section class="case-study-section">
+            <h3 class="subsection-heading">Phase 2: Component Library</h3>
+            
+            <p class="body-text">Next, I rebuilt core components with a focus on flexibility and accessibility. Each component was designed with:</p>
+            
+            <ul class="case-study-list">
+                <li>All interaction states (default, hover, active, focus, disabled, error)</li>
+                <li>Multiple size variants to accommodate different use cases</li>
+                <li>Built-in accessibility features and ARIA labels</li>
+                <li>Comprehensive documentation with usage guidelines</li>
+                <li>Real-world examples from existing CBS products</li>
+            </ul>
+            
+            <p class="body-text">I prioritized components based on usage frequency and impact, starting with buttons, form fields, cards, and navigation elements.</p>
+        </section>
+
+        <!-- Full Width Image -->
+        <section class="case-study-section">
+            <div class="case-study-image-container">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
+                    <span class="placeholder-text">Component library showcase</span>
+                </div>
+                <p class="image-caption">Comprehensive component library with variants, states, and properties.</p>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section class="case-study-section">
+            <h3 class="subsection-heading">Phase 3: Documentation & Training</h3>
+            
+            <p class="body-text">A design system is only as good as its documentation. I created comprehensive guidelines that included:</p>
+            
+            <div class="callout-box">
+                <p class="callout-text">Documentation isn't just about explaining how to use components—it's about explaining why certain decisions were made and when to break the rules.</p>
+            </div>
+            
+            <p class="body-text">Each component included usage guidelines, accessibility notes, do's and don'ts, and code snippets. I also created an onboarding guide for new team members and conducted live training sessions for all 8 product teams.</p>
+            
+            <p class="body-text">The introduction of Figma's Dev Mode was a game-changer. I developed a standardized workflow that reduced back-and-forth between designers and developers by 78%.</p>
+        </section>
+
+        <!-- Results Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Results & Impact</h2>
+            
+            <p class="body-text">The redesigned design system launched in Q1 2024 and was adopted across all CBS Sports products within 6 months. The results exceeded our initial goals:</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-number">78%</span>
+                    <span class="metric-label">Reduction in design handoff time</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">2,600+</span>
+                    <span class="metric-label">User tests validating changes</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">95%</span>
+                    <span class="metric-label">Team adoption rate within 6 months</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">WCAG 2.1 AA compliance across components</span>
+                </div>
+            </div>
+            
+            <p class="body-text">Beyond the metrics, the qualitative feedback from teams was overwhelmingly positive. Designers reported feeling more confident in their work, and developers appreciated the clarity of specifications.</p>
+        </section>
+
+        <!-- Learnings Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Key Learnings</h2>
+            
+            <p class="body-text">This project reinforced several important lessons about design systems:</p>
+            
+            <h3 class="subsection-heading">1. Start with people, not pixels</h3>
+            <p class="body-text">The most successful aspect of this project wasn't the components themselves—it was getting buy-in from stakeholders early and involving them throughout the process. Design systems are as much about culture change as they are about design.</p>
+            
+            <h3 class="subsection-heading">2. Documentation is a product feature</h3>
+            <p class="body-text">We initially underestimated the importance of documentation. Once we invested in comprehensive guidelines and examples, adoption skyrocketed. Good documentation turns a component library into a true design system.</p>
+            
+            <h3 class="subsection-heading">3. Design for the 80% use case</h3>
+            <p class="body-text">Early on, I tried to account for every possible edge case, which led to overly complex components. We learned to design for the most common scenarios and provide guidance for customization when needed.</p>
+            
+            <div class="callout-box">
+                <p class="callout-text">A design system should make the right thing the easy thing.</p>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="case-study-section">
+            <h2 class="section-heading">Next Steps</h2>
+            
+            <p class="body-text">While the design system has been successfully adopted, our work continues. Current priorities include:</p>
+            
+            <ul class="case-study-list">
+                <li>Expanding the component library to include more complex patterns like data visualizations and interactive dashboards</li>
+                <li>Developing a contribution model so teams can propose new components</li>
+                <li>Creating animated motion guidelines to ensure consistent transitions across products</li>
+                <li>Building automated testing to catch design-development inconsistencies</li>
+            </ul>
+            
+            <p class="body-text">The goal is to evolve the system alongside our products while maintaining the consistency and quality standards we've established.</p>
+        </section>
+
+        <!-- Project Navigation -->
+        <section class="case-study-section">
+            <div class="project-nav">
+                <a href="index.html#work" class="nav-button nav-button-secondary">← Back to All Projects</a>
+                <a href="#" class="nav-button nav-button-primary">Next Project →</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">I'm heads-down at CBS right now. I'm not taking on new projects atm, but if you have something you think I can help with, then I'm always open to chat.</p>
+            <a href="mailto:nakajima.allison@gmail.com" class="footer-link">Get in touch</a>
+            <p class="footer-copyright">© 2025 Muddled together by me, Allison Nakajima</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
